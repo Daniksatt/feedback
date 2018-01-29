@@ -13,7 +13,9 @@ margin:0;
 padding:0;
 color: #fff;
 text-align: center;
-background: url(https://images.unsplash.com/photo-1507761161372-1cc071ba4cec?ixlib=rb-0.3.5&s=8a66bfa089bcf61e03df3f973dd373df&auto=format&fit=crop&w=1951&q=80) repeat center center fixed;
+/* background: url(https://images.unsplash.com/photo-1507761161372-1cc071ba4cec?ixlib=rb-0.3.5&s=8a66bfa089bcf61e03df3f973dd373df&auto=format&fit=crop&w=1951&q=80) repeat center center fixed; */
+background: url(https://images.unsplash.com/photo-1482862549707-f63cb32c5fd9?ixlib=rb-0.3.5&s=b3e686e0a5d15ee1d98c2b5a594f48e1&auto=format&fit=crop&w=2689&q=80) repeat center center fixed;
+
 -webkit-background-size: cover;
 /* -moz-background-size: cover; */
 -moz-osx-background-size: cover;

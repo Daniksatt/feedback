@@ -46,12 +46,12 @@
 
 
 
-$(function () {
-  $('[data-toggle="popover"]').popover()
-  $('.popover').popover({
-    container: 'body'
-  })
+// $(function () {
+//   $('[data-toggle="popover"]').popover()
+//   $('.popover').popover({
+//     container: 'body'
+//   })
   // $('.popover-dismiss').popover({
   //   trigger: 'focus'
   // })
-})
+// })
