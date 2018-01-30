@@ -8,8 +8,6 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 
 
 var app = express();
@@ -45,22 +43,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-
-const url = 'mongodb://<heroku_w8kvjmf2>:<heroku_w8kvjmf2>@ds219098.mlab.com:19098';
-
-// Database Name
-const dbName = 'heroku_w8kvjmf2';
-
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  const db = client.db(dbName);
-
-  client.close();
 });
 
 module.exports = app;
