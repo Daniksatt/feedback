@@ -24,13 +24,13 @@
                     <h2><i class="em em-woman-bowing"></i> Thanks for visiting and leave feedbacks.
                   </h2>
                 </div>
-                <form>
+                <form method="post" action="/addfeedback">
                 <div class="row">
                     <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
                       <label>Things you think I'm good at </label>
                       <div class="paper">
                           <div class="paper-content">
-                              <textarea autofocus></textarea>
+                              <textarea name="pro"autofocus></textarea>
                           </div>
                       </div>
 
@@ -39,12 +39,12 @@
                       <label>Things you think I'm should improve </label>
                       <div class="paper">
                           <div class="paper-content">
-                              <textarea autofocus></textarea>
+                              <textarea name="cons" autofocus></textarea>
                           </div>
                       </div>
                     </div>
                  </div>
-                <button type="button" class="btn btn-primary btn-lg gradient">SEND</button>
+                <button name="sumit" type="button" class="btn btn-primary btn-lg gradient">SEND</button>
 
               </form>
 

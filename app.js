@@ -7,7 +7,14 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var MongoClient = require("mongodb").MongoClient;
+var assert = require('assert');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+var mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
 
 
 var app = express();
@@ -43,6 +50,36 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+
+//database part
+var url = 'mongodb://apple12345:apple12345@ds219098.mlab.com:19098/heroku_w8kvjmf2';
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, db) {
+if (err) throw err;
+});
+
+//end condoel
+var nameSchema = new mongoose.Schema({
+    pro: String,
+    con: String
+});
+var User = mongoose.model("User", nameSchema);
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/addname", (req, res) => {
+    var myData = new User(req.body);
+    myData.save()
+        .then(item => {
+            res.send("Name saved to database");
+        })
+        .catch(err => {
+            res.status(400).send("Unable to save to database");
+        });
 });
 
 module.exports = app;
